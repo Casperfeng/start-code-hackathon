@@ -1,0 +1,178 @@
+h1, h2, h3, h4, h5, h6, p, div, li, ul, button {
+    font-family: 'Radley', serif !important;
+}
+
+.container-header {
+    padding: 16px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-bg {
+    background: url("../images/bg.png");
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.header-img {
+    width: 300px;
+    height: auto;
+    margin: 8px auto 8px auto;
+    object-fit: contain;
+}
+
+.header-ingress {
+    text-align: center;
+    color: white;
+    font-size: 32px;
+}
+
+.header-intro {
+    text-align: center;
+    color: black;
+    font-size: 24px;
+    background: white;
+    padding: 8px;
+    width: fit-content;
+    margin: 24px auto auto auto;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+.container-menu {
+    position: relative;
+    height: 30px;
+    width: 60px;
+    margin-right: 24px;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.bar1, .bar2, .bar3 {
+    height: 5px;
+    width: 50px;
+    position: absolute;
+    background-color: white;
+    transition: transform 0.5s;
+}
+
+.bar1 {
+    top: 0px;
+}
+
+.bar2 {
+    top: 13px;
+
+}
+
+.bar3 {
+    bottom: 0px;
+}
+
+.active1 {
+    transform: rotate(45deg) !important;
+    top: 12px;
+
+}
+
+.active2 {
+    display: none !important;
+
+}
+
+.active3 {
+    transform: rotate(-45deg) !important;
+    bottom: 12px;
+
+}
+
+.container-nav {
+    display: flex;
+    position: relative;
+    justify-content: flex-end;
+    padding-right: 32px;
+    box-sizing: border-box;
+    padding-top: 32px;
+    align-items: center;
+}
+
+.container-modal {
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    background-color: #3A4BA4;
+    display: none;
+}
+
+.container-modal-wrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container-link {
+  display: block; 
+  z-index: 3; 
+  text-transform: capitalize;
+  font-size: 64px;
+  color: white;
+  margin-top: 16px;
+}
+
+.container-link:before {
+    content: "|  ";
+}
+
+.container-link:after {
+    content: "  |";
+}
+
+.container-modal-overlay {
+    width: 130vw;
+    height: 135vh; 
+    background-color: #5A67AC;
+    position: absolute;
+    transform: rotate(45deg);
+    right: 0px;
+}
+
+.container-link-side {
+    font-size: 24px;
+    text-transform: capitalize;
+    color: white;
+    text-align: center;
+  }
+  
+  .container-link-side:before {
+    content: "|  ";
+  }
+  
+  .container-link-side:after {
+    content: "  |";
+  }
+  
+
+.sidebar-overlay {
+    background-color: #5A67AC;
+    width: 100vw;
+    height: 100vh;
+    transform: rotate(60deg);
+    position: absolute;
+    top: 300px;
+    left: -100px;
+    z-index: 0;
+}
