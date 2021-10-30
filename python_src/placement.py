@@ -1,7 +1,7 @@
 import numpy as np
 import json
-import pprint
 import copy
+from room_generator import create_list
 
 
 class RoomPlacer:
@@ -11,7 +11,9 @@ class RoomPlacer:
         if filepath:
             floor_plan, rooms = self.parse_json(filepath)
         else:
-            self.generate(10)
+            floor_plan = [{"x": 0, "y": 0}, {"x": 0, "y": 50},
+                          {"x": 100, "y": 50}, {"x": 100, "y": 0}]
+            rooms = create_list()
 
         # Floor width/height
         self.fp_width, self.fp_height = self.find_floor_dimensions(floor_plan)
