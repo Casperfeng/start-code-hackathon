@@ -46,9 +46,6 @@ def parse_json(filepath):
         floor_plan = data['planBoundary']
         room_dict = data['rooms']
 
-    variables = get_square_coordinates(floor_plan)
-    domains = [room['id'] for room in room_dict]
-
     # To get a feeling for what our data looks like, let's print the contents
     # print(f'Coordinate array:')
     # pprint.pprint(floor_plan)
@@ -57,10 +54,6 @@ def parse_json(filepath):
     # pprint.pprint(room_dict)
     # print('\n')
     return floor_plan, room_dict
-
-
-def get_square_coodinates():
-    """Find the square"""
 
 
 def brute_force(floor_plan, rooms):
