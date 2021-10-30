@@ -82,25 +82,22 @@ class RoomPlacer:
 
         return type_dict
 
-    def add_rooms(self, prev_floor_map, rooms, min_avg_height):
+    def add_rooms(self, floor_map, rooms):
         '''Recursive method that places room of the same type optimally'''
-        # cur_floor_map = copy.deepcopy(prev_floor_map)
-        # rooms = copy.deepcopy(rooms)
 
         for room in rooms:
-            self.find_optimal
-        current_avg_height = self.average_height(
-            cur_floor_map, rooms[0]['type'])
+            free_spots = self.find_available_placement(floor_map, room)
 
-        if not rooms:
-            return min_avg_height
+            min_avg_height = float('inf')
+            best_floor_map = copy.deepcopy(floor_map)
 
-        if current_avg_height < min_avg_height:
-            if rooms:
-                return self.add_rooms(cur_floor_map, rooms)
-            else:
-                min_avg_height = current_avg_height
-                return cur_floor_map
+            for spot in free_spots:
+                temp_floor_map = copy.deepcopy(floor_map)
+
+                current_avg_height = self.average_height(
+                    temp_floor_map, rooms['type'])
+
+                if current_avg_height < min_avg_height:
 
         return None
 
